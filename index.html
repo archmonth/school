@@ -6,6 +6,34 @@
     <!-- 학교 버전에 맞춰 심플하게 변경한 탭 제목 -->
     <title>Links</title>
 
+    <!-- 1. 기본 파비콘 (첨부해주신 회색 동그라미 디자인 내장) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='32' fill='%2373777f'/%3E%3C/svg%3E">
+
+    <!-- 2. 크롬 지구본 캐시를 완전히 지우고 회색 원형 파비콘을 강제로 띄우는 스크립트 -->
+    <script>
+        window.addEventListener('load', function() {
+            const oldLinks = document.querySelectorAll("link[rel*='icon']");
+            oldLinks.forEach(el => el.parentNode.removeChild(el));
+
+            // 첨부해주신 이미지와 동일한 회색 원형 아이콘을 PNG로 즉석 생성
+            const canvas = document.createElement('canvas');
+            canvas.width = 128;
+            canvas.height = 128;
+            const ctx = canvas.getContext('2d');
+
+            ctx.fillStyle = '#73777f'; // 첨부 이미지의 회색 컬러
+            ctx.beginPath();
+            ctx.arc(64, 64, 42, 0, Math.PI * 2);
+            ctx.fill();
+
+            const newLink = document.createElement('link');
+            newLink.type = 'image/png';
+            newLink.rel = 'icon';
+            newLink.href = canvas.toDataURL('image/png');
+            document.head.appendChild(newLink);
+        });
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
@@ -76,16 +104,16 @@
             </a>
 
             <!-- 2. Portfolio -->
-            <a href="https://drive.google.com/drive/folders/1XGje2ELxFpZfz3Vg_K2eUhd-EON_JtXZ" class="link-btn" target="_blank">
+            <a href="https://drive.google.com" class="link-btn" target="_blank">
                 <span>Portfolio</span>
             </a>
 
-            <!-- 3. myBlueprint -->
+            <!-- 3. Blueprint -->
             <a href="https://app.myblueprint.ca/?returnUrl=/student/dashboard" class="link-btn" target="_blank">
-                <span>myBlueprint</span>
+                <span>Blueprint</span>
             </a>
 
-            <!-- 4. Notion -->
+            <!-- 4. Github -->
             <a href="https://github.com/" class="link-btn" target="_blank">
                 <span>Github</span>
             </a>
@@ -100,3 +128,4 @@
 
 </body>
 </html>
+
