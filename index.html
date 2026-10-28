@@ -6,24 +6,45 @@
     <!-- 학교 버전에 맞춰 심플하게 변경한 탭 제목 -->
     <title>School</title>
 
-    <!-- 1. 기본 파비콘 (첨부해주신 회색 동그라미 디자인 내장) -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='32' fill='%2373777f'/%3E%3C/svg%3E">
+    <!-- 1. 기본 파비콘 (첨부해주신 검은색 학사모 디자인 내장 및 크기 맞춤) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,16 10,38 50,60 82,42.4 82,66 90,66 90,38' fill='%23000000'/%3E%3Cpolygon points='23,51 50,65.8 77,51 77,70 50,84 23,70' fill='%23000000'/%3E%3C/svg%3E">
 
-    <!-- 2. 크롬 지구본 캐시를 완전히 지우고 회색 원형 파비콘을 강제로 띄우는 스크립트 -->
+    <!-- 2. 크롬 지구본 캐시를 완전히 지우고 학사모 파비콘을 강제로 띄우는 스크립트 -->
     <script>
         window.addEventListener('load', function() {
             const oldLinks = document.querySelectorAll("link[rel*='icon']");
             oldLinks.forEach(el => el.parentNode.removeChild(el));
 
-            // 첨부해주신 이미지와 동일한 회색 원형 아이콘을 PNG로 즉석 생성
+            // 첨부해주신 이미지와 동일한 학사모 아이콘을 동그라미 크기 비율에 맞춰 PNG로 즉석 생성
             const canvas = document.createElement('canvas');
             canvas.width = 128;
             canvas.height = 128;
             const ctx = canvas.getContext('2d');
+            const s = 128 / 100;
 
-            ctx.fillStyle = '#73777f'; // 첨부 이미지의 회색 컬러
+            ctx.fillStyle = '#000000';
+
+            // 1) 학사모 윗부분 (마름모 지붕 + 우측 술)
             ctx.beginPath();
-            ctx.arc(64, 64, 42, 0, Math.PI * 2);
+            ctx.moveTo(50 * s, 16 * s);
+            ctx.lineTo(10 * s, 38 * s);
+            ctx.lineTo(50 * s, 60 * s);
+            ctx.lineTo(82 * s, 42.4 * s);
+            ctx.lineTo(82 * s, 66 * s);
+            ctx.lineTo(90 * s, 66 * s);
+            ctx.lineTo(90 * s, 38 * s);
+            ctx.closePath();
+            ctx.fill();
+
+            // 2) 학사모 아랫부분 (몸통)
+            ctx.beginPath();
+            ctx.moveTo(23 * s, 51 * s);
+            ctx.lineTo(50 * s, 65.8 * s);
+            ctx.lineTo(77 * s, 51 * s);
+            ctx.lineTo(77 * s, 70 * s);
+            ctx.lineTo(50 * s, 84 * s);
+            ctx.lineTo(23 * s, 70 * s);
+            ctx.closePath();
             ctx.fill();
 
             const newLink = document.createElement('link');
@@ -133,4 +154,5 @@
 
 </body>
 </html>
+
 
