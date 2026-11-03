@@ -111,6 +111,14 @@
             transform: scale(1.01);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
         }
+
+        /* 구역 나눔 구분선 스타일 */
+        .section-divider {
+            height: 1px;
+            background-color: #dcdce0;
+            margin: 12px 0;
+            width: 100%;
+        }
     </style>
 </head>
 <body>
@@ -139,14 +147,18 @@
                 <span>Github</span>
             </a>
 
-            <!-- 5. BMHS -->
-            <a href="https://bmhs.nbed.ca/bmhs-bell-schedule-2025-26/" target="_blank">
+            <!-- 구역 나눔 구분선 -->
+            <div class="section-divider"></div>
+
+            <!-- 5. BMHS (class="link-btn" 복구 완료) -->
+            <a href="https://bmhs.nbed.ca/bmhs-bell-schedule-2025-26/" class="link-btn" target="_blank">
                 <span>BMHS</span>
             </a>
 
-            <!-- 6. Yearbook -->
+            <!-- 6. Yearbook (닫는 </a> 태그 추가 완료) -->
             <a href="https://yearbookavenue.jostens.com/yto/login" class="link-btn" target="_blank">
                 <span>Yearbook</span>
+            </a>
 
             <!-- 7. Blueprint -->
             <a href="https://app.myblueprint.ca/?returnUrl=/student/dashboard" class="link-btn" target="_blank">
@@ -163,5 +175,4 @@
 
 </body>
 </html>
-
 
