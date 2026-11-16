@@ -71,7 +71,7 @@
             color: #111111;
             display: flex;
             justify-content: center;
-            align-items: center; /* 버튼들을 화면 세로 중앙에 깔끔하게 배치 */
+            align-items: center; /* 화면 수직/수평 중앙 정렬 */
             min-height: 100vh;
             padding: 40px 16px;
         }
@@ -97,17 +97,19 @@
             width: 100%;
             min-height: 68px;
             padding: 12px 24px;
-            background-color: #e2e2e2; /* 첫 번째 사진 색상 반영 */
+            background-color: #e2e2e2; 
             border-radius: 14px;
             font-size: 16px;
             font-weight: 600;
             color: #111111;
             text-decoration: none;
-            transition: transform 0.15s ease, box-shadow 0.15s ease;
+            /* 배경색 전환을 0.2초 동안 부드럽게 설정 */
+            transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.15s ease;
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
         }
 
         .link-btn:hover {
+            background-color: #888888; /* 사진 속 회색 톤으로 호버 색상 변경 */
             transform: scale(1.01);
             box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
         }
@@ -115,7 +117,7 @@
         /* 구역 나눔 구분선 스타일 */
         .section-divider {
             height: 1px;
-            background-color: #333333; /* 다크 모드에 어울리는 구분선 색상 */
+            background-color: #333333; 
             margin: 12px 0;
             width: 100%;
         }
