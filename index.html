@@ -102,14 +102,15 @@
             font-size: 16px;
             font-weight: 600;
             color: #111111;
-            text-decoration: none;
+            cursor: pointer; /* 마우스 올렸을 때 손가락 모양 유지 */
             /* 배경색 전환을 0.2초 동안 부드럽게 설정 */
             transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.15s ease;
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+            user-select: none; /* 텍스트 드래그 방지 */
         }
 
         .link-btn:hover {
-            background-color: #888888; /* 사진 속 회색 톤으로 호버 색상 변경 */
+            background-color: #888888; /* 호버 시 사진 속 회색 톤으로 변경 */
             transform: scale(1.01);
             box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
         }
@@ -130,47 +131,47 @@
         <div class="links-container">
             
             <!-- 1. Essay -->
-            <a href="https://nbed-my.sharepoint.com/my?id=%2Fpersonal%2Fkevkwo81404_nbss_nbed_nb_ca%2FDocuments%2FMe%2Fessay&viewid=ae799b24-2560-42f8-8305-d823f9556042&share=cgoreGbJuvVERY6dzSY68g_KEgUC_xFuZn72q8NO7uBPda4Uiw/" class="link-btn" target="_blank">
+            <div class="link-btn" onclick="window.open('https://nbed-my.sharepoint.com/my?id=%2Fpersonal%2Fkevkwo81404_nbss_nbed_nb_ca%2FDocuments%2FMe%2Fessay&viewid=ae799b24-2560-42f8-8305-d823f9556042&share=cgoreGbJuvVERY6dzSY68g_KEgUC_xFuZn72q8NO7uBPda4Uiw/', '_blank')">
                 <span>Essay</span>
-            </a>
+            </div>
 
             <!-- 2. Portfolio -->
-            <a href="https://drive.google.com" class="link-btn" target="_blank">
+            <div class="link-btn" onclick="window.open('https://drive.google.com', '_blank')">
                 <span>Portfolio</span>
-            </a>
+            </div>
 
             <!-- 3. Canva -->
-            <a href="https://www.canva.com/" class="link-btn" target="_blank">
+            <div class="link-btn" onclick="window.open('https://www.canva.com/', '_blank')">
                 <span>Canva</span>
-            </a>
+            </div>
 
             <!-- 4. Github -->
-            <a href="https://github.com/" class="link-btn" target="_blank">
+            <div class="link-btn" onclick="window.open('https://github.com/', '_blank')">
                 <span>Github</span>
-            </a>
+            </div>
 
             <!-- 구역 나눔 구분선 -->
             <div class="section-divider"></div>
 
             <!-- 5. BMHS -->
-            <a href="https://bmhs.nbed.ca/bmhs-bell-schedule-2025-26/" class="link-btn" target="_blank">
+            <div class="link-btn" onclick="window.open('https://bmhs.nbed.ca/bmhs-bell-schedule-2025-26/', '_blank')">
                 <span>BMHS</span>
-            </a>
+            </div>
 
             <!-- 6. Yearbook -->
-            <a href="https://yearbookavenue.jostens.com/yto/login" class="link-btn" target="_blank">
+            <div class="link-btn" onclick="window.open('https://yearbookavenue.jostens.com/yto/login', '_blank')">
                 <span>Yearbook</span>
-            </a>
+            </div>
 
             <!-- 7. Blueprint -->
-            <a href="https://app.myblueprint.ca/?returnUrl=/student/dashboard" class="link-btn" target="_blank">
+            <div class="link-btn" onclick="window.open('https://app.myblueprint.ca/?returnUrl=/student/dashboard', '_blank')">
                 <span>Blueprint</span>
-            </a>
+            </div>
 
             <!-- 8. Powerschool -->
-            <a href="https://sisasde.nbed.nb.ca/guardian/home.html" class="link-btn" target="_blank">
+            <div class="link-btn" onclick="window.open('https://sisasde.nbed.nb.ca/guardian/home.html', '_blank')">
                 <span>Powerschool</span>
-            </a>
+            </div>
             
         </div>
     </div>
